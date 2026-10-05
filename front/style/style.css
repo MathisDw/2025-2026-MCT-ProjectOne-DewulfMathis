@@ -1,0 +1,576 @@
+/* Test CSS connection */
+/* * {
+    background-color: hotpink;
+} */
+
+
+/*---------------------------------------/*
+ # SETTINGS
+/*---------------------------------------*/
+
+:root {
+  /* VARIABELEN */
+  /* Standard colors */
+  --white: #FFFFFF;
+  --grayscale-50: #E8E8E8;
+  --grayscale-100: #D1D1D1;
+  --grayscale-900: #0E0E0E;
+  --grayscale-950: #070707;
+
+  /* Other colors */
+  --yellow-500: #FEC600;
+  --red: #F34723;
+  --green: #32CD32;
+
+  /* Shadow & Transition */
+  --shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease-out;
+
+  /* Variabele voor grootte van de padding, margin, ... */
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-48: 3rem;
+  --space-96: 6rem;
+
+  /* Variabele voor de border-radius grootte */
+  --radius-6: 0.375rem;
+  --radius-12: 0.75rem;
+  --radius-full: 9999rem;
+
+  /* Variabele voor de font-size */
+  --font-size-8: 0.5rem;
+  --font-size-10: 0.625rem;
+  --font-size-12: 0.75rem;
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+
+  /* Variabele voor font-weight */
+  --font-weight-semi-bold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+}
+
+/* transition: all 0.3s ease-out; */
+
+/*---------------------------------------/*
+ # GENERIC
+/*---------------------------------------*/
+
+/* Standaard instelling voor elke CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*---------------------------------------/*
+ # ELEMENTS
+/*---------------------------------------*/
+
+html {
+  /* Instellen van de standaard tekst layout */
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  color: var(--grayscale-950);
+  font-weight: var(--font-weight-regular);
+
+  /* font-smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive img & svg */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+/* Koppen en vetgedrukte tekst */
+h1 {
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--space-32);
+}
+
+h2 {
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--space-32);
+}
+
+h3 {
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--space-24);
+}
+
+strong {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+/*---------------------------------------/*
+ # OBJECTS
+/*---------------------------------------*/
+
+/* Standaard CONTAINER */
+.o-container {
+  margin: 0 auto;
+  padding: var(--space-16);
+  width: 100%;
+  max-width: 70rem;
+}
+
+/* RESET button layout */
+.o-button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* RESET input layout */
+.o-input-reset {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+
+/* input[type="date"]::-webkit-inner-spin-button, 
+input[type="date"]::-webkit-calendar-picker-indicator { 
+  display: none; 
+  -webkit-appearance: none; 
+} */
+
+/* RESET list layout */
+.o-list-reset {
+  list-style: none;
+  margin: 0;
+}
+
+/* RESET link layout */
+.o-link-reset {
+  color: var(--grayscale-950);
+  text-decoration: none;
+}
+
+/* BUTTONS */
+
+.o-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-8);
+  background-color: var(--yellow-500);
+  border-radius: var(--radius-6);
+  padding: var(--space-4);
+  width: 100%;
+}
+
+.o-button__icon {
+  fill: var(--white);
+  width: var(--space-24);
+  height: auto;
+}
+
+.o-button__text {
+  font-size: var(--font-size-14);
+  line-height: var(--space-24);
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.o-button--light {
+  border: 2px var(--yellow-500) solid;
+  background-color: var(--white);
+}
+
+.o-button__icon--light {
+  fill: var(--yellow-500);
+}
+
+.o-button__text--light {
+  color: var(--yellow-500);
+}
+
+.o-button--power {
+  background-color: var(--red);
+}
+
+/* CHARTS */
+
+.js-chart {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.o-chart__title {
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--space-24);
+}
+
+.o-graphs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--space-8)
+}
+
+@media (width >=768px) {
+  .o-graphs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >=1024px) {
+  .o-graphs {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/*---------------------------------------/*
+ # COMPONENTS
+/*---------------------------------------*/
+
+/* HEADER */
+
+.c-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px var(--grayscale-50) solid;
+
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-16);
+  width: 100%;
+  max-width: 70rem;
+}
+
+.c-header__title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+
+}
+
+.c-header__icon {
+  width: var(--space-32);
+  height: auto;
+}
+
+.c-index__main {
+  margin-bottom: var(--space-96);
+}
+
+.c-main>* {
+  margin-bottom: var(--space-16);
+}
+
+.c-icon__back {
+  fill: var(yellow)
+}
+
+/* INDEX.HTML */
+
+.c-index__buttons {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--space-16);
+  width: 100%;
+
+  background-color: var(--white);
+  border-top: 1px var(--grayscale-50) solid;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+@media (width > 376px) {
+  .c-index__buttons {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .c-index__main {
+    margin-bottom: var(--space-48);
+  }
+}
+
+.c-live {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 0.5rem;
+  align-content: center;
+}
+
+.c-live__type {
+  font-size: var(--font-size-12);
+  line-height: var(--space-16);
+}
+
+@media (width < 350px) {
+  .c-live__type {
+    font-size: var(--font-size-8);
+  }
+}
+
+.c-live__waarde {
+  border: 1px var(--grayscale-100) solid;
+  border-radius: var(--radius-6);
+  padding: var(--space-8) var(--space-8);
+  text-align: center;
+  cursor: default;
+}
+
+.c-live__waarde--alarm {
+  border-width: 2px;
+  border-color: var(--red);
+}
+
+.c-livewaarde {
+  font-size: var(--font-size-14);
+  line-height: var(--space-24);
+}
+
+/* HISTORIEK.HTML */
+
+.c-history-select>*,
+.c-history__date-picker>*,
+.c-history__keg-picker>* {
+  margin-bottom: var(--space-16);
+}
+
+.c-date-picker__input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: var(--space-16);
+}
+
+.c-input-group {
+  padding: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--grayscale-100);
+  border-radius: var(--radius-6);
+  background-color: var(--white);
+  width: 100%;
+}
+
+.c-input-group__field {
+  width: 100%;
+  font-size: var(--font-size-12);
+  line-height: var(--space-12);
+  border: none;
+  cursor: pointer;
+}
+
+.c-kegs {
+  border: 1px solid var(--grayscale-100);
+  border-radius: var(--radius-6);
+  background-color: var(--white);
+  padding: var(--space-8);
+}
+
+.c-keg__select {
+  width: 100%;
+  font-size: var(--font-size-14);
+  line-height: var(--space-24);
+  color: var(--grayscale-950);
+  border: none;
+  width: 100%;
+}
+
+@media (width >=768px) {
+  .c-history-select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: var(--space-32)
+  }
+}
+
+/* CONFIG.HTML */
+
+.c-settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16)
+}
+
+.c-settings__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.c-settings__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.c-settings__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+.c-config__buttons {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--space-16)
+}
+
+@media (width >=768px) {
+  .c-config__buttons {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+
+.c-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000
+}
+
+.c-popup__overlay {
+  background-color: rgba(0, 0, 0,.5);
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.c-popup__content {
+  background-color: var(--white);
+  z-index: 1000;
+  width: 18.75rem;
+  height: 10.5rem;
+  border-radius: var(--radius-12);
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8)
+}
+
+.c-popup__title {
+  font-size: var(--font-size-16);
+  line-height: var(--space-24);
+  font-weight: var(--font-weight-medium);
+}
+
+.c-popup__info {
+  font-size: var(--font-size-14);
+  line-height: var(--space-24);
+  font-weight: var(--font-weight-regular);
+}
+
+.c-popup__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.c-popup__button {
+  font-size: var(--font-size-14);
+  line-height: var(--space-24);
+  font-weight: var(--font-weight-semi-bold);
+  text-transform: uppercase;
+}
+
+.c-popup__button--go {
+  color: var(--yellow-500);
+}
+
+.c-popup__button--power {
+  color: var(--red);
+}
+
+/* NIEUW_VAT.HTML */
+.c-steps__images{
+  max-height: 60vh;
+  justify-self: center;
+}
+
+.c-steps__text {
+  width: 100%;
+  max-width: 45rem;
+  justify-self: center;
+  text-align: center;
+  font-size: var(--font-size-14);
+  line-height: var(--space-24);
+}
+
+.c-steps__text--important{
+  font-size: var(--font-size-20);
+  line-height: var(--space-32);
+  font-weight: var(--font-weight-medium);
+}
+
+/*---------------------------------------/*
+ # UTILITIES
+/*---------------------------------------*/
+
+.u-more-width {
+  max-width: 100rem;
+}
+
+/* kleur utilities */
+.u-text-color-green {
+  color: var(--green)
+}
+
+/* layout utilities */
+.u-text-center {
+  text-align: center;
+}
+
+.u-hide {
+  display: none;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nieuw vat | Project One - Het slimme vat</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Link CSS, favicon -->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Link JS-script, SocketIO -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+        integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+        crossorigin="anonymous">
+    </script>
+    <script src="script/app.js"></script>
+    
+</head>
+
+<body class="js-nieuw-vat-html">
+    <header class="c-header">
+        <div class="c-header__title">
+            <h1 class="c-title">SmartKeg</h1>
+    </header>
+
+
+    <main class="o-container c-main">
+
+        <p class="c-steps__text">Draai de druksensor los van het vat.</p>
+        <img class="c-steps__images" src="images/img/step_1.jpg" alt="image_step_1">
+
+        <p class="c-steps__text">Haal het vat uit de kast en zet al een nieuw vat aan de kant.</p>
+        <img class="c-steps__images" src="images/img/step_2.jpg" alt="image_step_2">
+
+        <p class="c-steps__text c-steps__text--important">Tarreer eerst de weegschaal terwijl er geen vat op staat</p>
+        <button class="o-button-reset o-button o-button--light c-date-picker__button js-tare-button">
+            <svg class="o-button__icon o-button__icon--light" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 6C5 6.83 5.67 7.5 6.5 7.5H10.5V18C10.5 18.83 11.17 19.5 12 19.5C12.83 19.5 13.5 18.83 13.5 18V7.5H17.5C18.33 7.5 19 6.83 19 6C19 5.17 18.33 4.5 17.5 4.5H6.5C5.67 4.5 5 5.17 5 6Z"/>
+            </svg>
+                <p class="o-button__text o-button__text--light">Weegschaal tarreren</p>
+        </button>
+
+        <p class="c-steps__text">Zorg zeker dat er een drukfles aanwezig is op het nieuwe vat.</p>
+        <img class="c-steps__images" src="images/img/step_3.jpg" alt="image_step_3">
+
+        <p class="c-steps__text">Plaats het nieuwe vat op de weegschaal (als je die getarreerd hebt).</p>
+        <img class="c-steps__images" src="images/img/step_4.jpg" alt="image_step_4">
+
+        <p class="c-steps__text">Geef het nieuwe vat eerst een naam.</p>
+        <label class="c-input-group" for="inhoud">
+            <input type="text" id="inhoud" data-configid="1" name="inhoud" 
+            class="o-input-reset c-input-group__field js-input-vatnaam" required>
+        </label>
+
+        <p class="c-steps__text c-steps__text--important">
+            Pas als alle bovenstaande stappen correct uitgevoerd zijn.
+            <br>Druk op onderstaande knop om het nieuwe vat te starten.
+        </p>
+
+        <button class="o-button-reset o-button c-date-picker__button js-nieuw-vat-button">
+            <svg class="o-button__icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.59 3.59C17.21 3.21 16.7 3 16.17 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V7.83C21 7.3 20.79 6.79 20.41 6.42L17.59 3.59ZM12 19C10.34 19 9 17.66 9 16C9 14.34 10.34 13 12 13C13.66 13 15 14.34 15 16C15 17.66 13.66 19 12 19ZM13 9H7C5.9 9 5 8.1 5 7C5 5.9 5.9 5 7 5H13C14.1 5 15 5.9 15 7C15 8.1 14.1 9 13 9Z"/>
+            </svg>
+            <p class="o-button__text">Start nieuw vat</p>
+        </button>
+    </main>
+    </main>
+
+</body>
+
+</html>

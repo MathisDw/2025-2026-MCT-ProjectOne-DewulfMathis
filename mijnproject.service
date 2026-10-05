@@ -1,0 +1,14 @@
+[Unit]
+Description=ProjectOne Project
+After=network.target
+[Service]
+ExecStart=/home/student/project/2025-2026-projectone-mct-DewulfMathis/venv_p1/bin/python -u /home/student/project/2025-2026-projectone-mct-DewulfMathis/backend/app.py
+WorkingDirectory=/home/student/project/2025-2026-projectone-mct-DewulfMathis/backend
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=student
+CPUSchedulingPolicy=rr
+CPUSchedulingPriority=99
+[Install]
+WantedBy=multi-user.target

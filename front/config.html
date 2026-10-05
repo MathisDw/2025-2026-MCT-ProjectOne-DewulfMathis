@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instellingen | Project One - Het slimme vat</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Link CSS, favicon -->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Link JS-script, SocketIO -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+        integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+        crossorigin="anonymous">
+    </script>
+    <script src="script/app.js"></script>
+    
+</head>
+
+<body class="js-config-html">
+    <body class="js-historiek-html">
+    <header class="c-header">
+        <div class="c-header__title">
+            <div class="c-header__icon">
+                <a class="c-icon__back" href="javascript:history.back()">
+                    <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.6667 14.6667H10.44L17.8933 7.21334L16 5.33334L5.33334 16L16 26.6667L17.88 24.7867L10.44 17.3333H26.6667V14.6667Z" fill="#070707"/>
+                    </svg>
+                </a>
+            </div>
+            <h1 class="c-title">SmartKeg</h1>
+        </div>
+        <div>
+            <h2 class="u-hide u-text-color-green js-settings-feedback">Gelukt!</h2>
+        </div>
+    </header>
+
+
+    <main class="o-container c-main">
+        <h2>Instellingen</h2>
+
+        <section class="c-settings">
+            <div class="c-settings__section">
+                
+                <h3>Alarmwaarden:</h3>
+                <div class="c-settings__rows">
+
+                    <div class="c-settings__row">
+                        <p class="">Inhoud (liter)</p>
+                        <label class="c-input-group" for="inhoud">
+                            <input type="number" id="inhoud" data-configid="1" name="inhoud" 
+                            class="o-input-reset c-input-group__field js-input-config" required>
+                        </label>
+                    </div>
+
+                    <div class="c-settings__row">
+                        <p class="">Temperatuur (°C)</p>
+                        <label class="c-input-group" for="inhoud">
+                            <input type="number" id="inhoud" data-configid="2" name="inhoud" 
+                            class="o-input-reset c-input-group__field js-input-config" required>
+                        </label>
+                    </div>
+
+                    <div class="c-settings__row">
+                        <p class="">Druk (bar)</p>
+                        <label class="c-input-group" for="inhoud">
+                            <input type="number" id="inhoud" data-configid="3" name="inhoud" 
+                            class="o-input-reset c-input-group__field js-input-config" required>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="c-settings__section">
+                
+                <h3>Tarragewicht van het vat:</h3>
+                <div class="c-settings__rows">
+
+                    <div class="c-settings__row">
+                        <p class="">Tarragewicht (gram)</p>
+                        <label class="c-input-group" for="inhoud">
+                            <input type="number" id="inhoud" data-configid="4" name="inhoud" 
+                            class="o-input-reset c-input-group__field js-input-config" required>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="c-config__buttons">
+
+            <button class="o-button-reset o-button js-save-settings">
+                <svg class="o-button__icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.59 3.59C17.21 3.21 16.7 3 16.17 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V7.83C21 7.3 20.79 6.79 20.41 6.42L17.59 3.59ZM12 19C10.34 19 9 17.66 9 16C9 14.34 10.34 13 12 13C13.66 13 15 14.34 15 16C15 17.66 13.66 19 12 19ZM13 9H7C5.9 9 5 8.1 5 7C5 5.9 5.9 5 7 5H13C14.1 5 15 5.9 15 7C15 8.1 14.1 9 13 9Z"/>
+                </svg>
+                <p class="o-button__text">Opslaan</p>
+            </button>
+
+            <button class="o-button-reset o-button o-button--power js-poweroff">
+                <svg class="o-button__text" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.0018 3.00272C11.4518 3.00272 11.0018 3.45272 11.0018 4.00272V12.0027C11.0018 12.5527 11.4518 13.0027 12.0018 13.0027C12.5518 13.0027 13.0018 12.5527 13.0018 12.0027V4.00272C13.0018 3.45272 12.5518 3.00272 12.0018 3.00272ZM17.1418 5.86272C16.7518 6.25272 16.7618 6.86272 17.1318 7.25272C18.2618 8.45272 18.9618 10.0527 19.0018 11.8227C19.0918 15.6527 15.9218 18.9527 12.0918 18.9927C8.18182 19.0527 5.00182 15.9027 5.00182 12.0027C5.00182 10.1627 5.71182 8.49272 6.87182 7.24272C7.24182 6.85272 7.24182 6.24272 6.86182 5.86272C6.46182 5.46272 5.81182 5.47272 5.43182 5.88272C3.98182 7.42272 3.07182 9.47272 3.00182 11.7427C2.86182 16.6227 6.83182 20.8427 11.7118 20.9927C16.8118 21.1527 21.0018 17.0627 21.0018 11.9927C21.0018 9.62272 20.0818 7.48272 18.5818 5.88272C18.2018 5.47272 17.5418 5.46272 17.1418 5.86272Z" fill="white"/>
+                </svg>
+                <p class="o-button__text o-button__text--power">Uitschakelen</p>
+            </button>
+
+        </section>
+    </main>
+
+
+    <div class="c-popup u-hide js-popup">
+        <div class="c-popup__overlay">
+
+        </div>
+        <div class="c-popup__content">
+            <h3 class="c-popup__title">Weet u zeker dat u een nieuw vat wilt insteken?</h3>
+            <p class="c-popup__info">Hiermee zal het systeem tijdelijk stopgezet worden.</p>
+            <div class="c-popup__buttons">
+                <button class="o-button-reset c-popup__button js-popup-btn-cancel"><p>Annuleren</p></button>
+                <button class="o-button-reset c-popup__button c-popup__button--power js-popup-btn-shutdown"><p>Uitschakelen</p></button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
